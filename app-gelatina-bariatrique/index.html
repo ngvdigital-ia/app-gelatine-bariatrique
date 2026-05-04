@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Gelatina Bariatrica</title>
+  <meta name="description" content="Une routine simple a base de gelatine plus des recettes personnalisees pour soutenir une gestion du poids realiste.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0a;--bg-card:#141414;--bg-subtle:#111;--accent:#e53935;--accent-dark:#c62828;--accent-glow:rgba(229,57,53,0.25);--green:#22c55e;--green-soft:rgba(34,197,94,0.15);--white:#fff;--text:#e0e0e0;--text-secondary:#a0a0a0;--text-muted:#666;--border:rgba(255,255,255,0.08);--radius:12px;--radius-lg:16px}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}a:hover{color:#ff5252}
+    .container{max-width:1000px;margin:0 auto;padding:0 24px}
+    .container--narrow{max-width:720px;margin:0 auto;padding:0 24px}
+    section{padding:80px 0}
+    h1{font-size:48px;font-weight:900;line-height:1.08;letter-spacing:-1.5px;color:var(--white)}
+    h2{font-size:36px;font-weight:800;line-height:1.12;letter-spacing:-0.5px;color:var(--white);margin-bottom:16px}
+    h3{font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px}
+    p{color:var(--text-secondary);margin-bottom:16px}p:last-child{margin-bottom:0}
+    .text-center{text-align:center}
+    .hero{padding:80px 0 60px;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+    .hero-content{max-width:680px;margin:0 auto;text-align:center}
+    .hero-content .badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:var(--green-soft);border:1px solid rgba(34,197,94,0.25);padding:6px 14px;border-radius:100px;margin-bottom:24px}
+    .hero-content h1{margin-bottom:20px}
+    .hero-content h1 span{color:var(--accent)}
+    .hero-content .lead{font-size:17px;color:var(--text-secondary);line-height:1.65;margin-bottom:32px}
+    .btn-accent{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--white);font-size:16px;font-weight:700;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;transition:all .25s;font-family:inherit;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 4px 24px var(--accent-glow)}
+    .btn-accent:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(229,57,53,0.4);color:var(--white)}
+    .benefit-bar{padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .benefit-bar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .benefit-bar-item{display:flex;align-items:center;gap:12px}
+    .benefit-bar-icon{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .benefit-bar-icon svg{width:18px;height:18px;fill:var(--white)}
+    .benefit-bar-text{font-size:14px;font-weight:600;color:var(--white);line-height:1.3}
+    .feature-list{list-style:none;padding:0;margin:24px 0 0}
+    .feature-list li{padding:10px 0 10px 36px;position:relative;font-size:15px;color:var(--text-secondary);line-height:1.5}
+    .feature-list li::before{content:"";position:absolute;left:0;top:12px;width:22px;height:22px;border-radius:50%;background:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8.5 13.3L5.7 10.5l1.1-1.1 1.7 1.7 4.2-4.2 1.1 1.1L8.5 13.3z' fill='white'/%3E%3C/svg%3E");background-size:20px;background-repeat:no-repeat;background-position:center}
+    .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+    .who-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,box-shadow .3s}
+    .who-card:hover{border-color:rgba(229,57,53,0.25);box-shadow:0 0 30px var(--accent-glow)}
+    .who-card .icon{width:44px;height:44px;border-radius:10px;background:rgba(229,57,53,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+    .who-card h3{font-size:16px;margin-bottom:6px}
+    .who-card p{font-size:14px;color:var(--text-muted);margin:0}
+    .problem-subtitle{max-width:560px;margin:0 auto;text-align:center}
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+    .problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:border-color .3s}
+    .problem-card:hover{border-color:rgba(229,57,53,0.3)}
+    .problem-icon{width:52px;height:52px;border-radius:50%;background:rgba(229,57,53,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .problem-icon svg{width:24px;height:24px;fill:var(--accent)}
+    .problem-card h3{font-size:15px;margin-bottom:8px}
+    .problem-card p{font-size:14px;color:var(--text-muted);margin:0}
+    .callout-box{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:28px 32px;margin-top:36px}
+    .callout-box p{font-size:16px;font-weight:500;color:var(--text);margin:0}
+    .callout-box strong{color:var(--accent)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+    .benefit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,box-shadow .3s}
+    .benefit-card:hover{border-color:rgba(229,57,53,0.25);box-shadow:0 0 30px var(--accent-glow)}
+    .benefit-card .icon{width:44px;height:44px;border-radius:10px;background:rgba(229,57,53,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+    .benefit-card h3{font-size:16px;margin-bottom:6px}
+    .benefit-card p{font-size:14px;color:var(--text-muted);margin:0}
+    .guarantee-section{text-align:center}
+    .guarantee-section h2{font-size:28px;margin-bottom:16px}
+    .guarantee-section p{max-width:540px;margin:0 auto}
+    .pricing-wrapper{position:relative;max-width:500px;margin:0 auto}
+    .pricing-wrapper::before{content:"";position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#ff5252,var(--accent-dark));z-index:0}
+    .pricing-card{position:relative;z-index:1;background:var(--bg-card);border-radius:var(--radius-lg);padding:48px 40px;text-align:center}
+    .pricing-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:100px;margin-bottom:24px}
+    .pricing-card h2{font-size:24px;margin-bottom:20px}
+    .pricing-card .price{font-size:68px;font-weight:900;color:var(--white);line-height:1;margin:8px 0;letter-spacing:-2px}
+    .pricing-card .price span{color:var(--accent)}
+    .pricing-card .price-sub{font-size:14px;color:var(--text-muted);margin-bottom:28px}
+    .cta-main{display:block;width:100%;background:var(--accent);color:var(--white);font-size:17px;font-weight:700;padding:18px;border-radius:10px;border:none;cursor:pointer;transition:all .25s;font-family:inherit;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 4px 24px var(--accent-glow);text-align:center}
+    .cta-main:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(229,57,53,0.4);color:var(--white)}
+    .trust-icons{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:20px;font-size:12px;color:var(--text-muted)}
+    .trust-icons span{display:flex;align-items:center;gap:4px}
+    .compliance{padding:32px 0;border-top:1px solid var(--border)}
+    .compliance p{font-size:11px;color:#b0b0b0;line-height:1.7;text-align:center;max-width:640px;margin:0 auto 6px}
+    footer{background:#050505;padding:36px 0;text-align:center;border-top:1px solid var(--border)}
+    .footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-bottom:12px}
+    .footer-links a{color:#b0b0b0;font-size:14px}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{color:#888;font-size:13px}
+    .section-alt{background:var(--bg-subtle)}
+    .toc-section{display:grid;gap:16px;margin-top:32px}
+    .toc-item{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 24px}
+    .toc-item p{margin:0;font-size:15px;color:var(--text-secondary)}
+    .toc-item strong{color:var(--white)}
+    @media(max-width:768px){
+      h1{font-size:34px}h2{font-size:28px}section{padding:56px 0}.hero{padding:56px 0 40px}
+      .benefit-bar-grid{grid-template-columns:1fr;gap:16px}.benefit-bar-item{justify-content:center}
+      .problem-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}
+      .container{padding:0 20px}.container--narrow{padding:0 20px}
+      .pricing-card{padding:36px 24px}.pricing-card .price{font-size:52px}
+      .btn-accent{width:100%;justify-content:center}
+      .hero::before{width:300px;height:300px;right:-50px;top:-50px}
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="badge">Compliance-Friendly &middot; Resultats Variables</span>
+        <h1>App <span>Gelatina Bariatrica</span></h1>
+        <p class="lead">Une routine simple &agrave; base de g&eacute;latine &mdash; plus des recettes personnalis&eacute;es (y compris une &laquo;&nbsp;pizza l&eacute;g&egrave;re&nbsp;&raquo;) pour soutenir une gestion du poids r&eacute;aliste, sans r&eacute;gimes extr&ecirc;mes ni promesses irr&eacute;alistes.</p>
+        <a href="#offer" class="btn-accent">Commencer &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="benefit-bar">
+    <div class="container">
+      <div class="benefit-bar-grid">
+        <div class="benefit-bar-item">
+          <div class="benefit-bar-icon"><svg viewBox="0 0 20 20"><path d="M8.5 13.3L5.7 10.5l1.1-1.1 1.7 1.7 4.2-4.2 1.1 1.1L8.5 13.3z"/></svg></div>
+          <span class="benefit-bar-text">Routine simple et r&eacute;p&eacute;table</span>
+        </div>
+        <div class="benefit-bar-item">
+          <div class="benefit-bar-icon"><svg viewBox="0 0 20 20"><path d="M8.5 13.3L5.7 10.5l1.1-1.1 1.7 1.7 4.2-4.2 1.1 1.1L8.5 13.3z"/></svg></div>
+          <span class="benefit-bar-text">Acc&egrave;s digital instantan&eacute;</span>
+        </div>
+        <div class="benefit-bar-item">
+          <div class="benefit-bar-icon"><svg viewBox="0 0 20 20"><path d="M8.5 13.3L5.7 10.5l1.1-1.1 1.7 1.7 4.2-4.2 1.1 1.1L8.5 13.3z"/></svg></div>
+          <span class="benefit-bar-text">Garantie 60 jours satisfait ou rembours&eacute;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2 class="text-center">Cela vous parle&nbsp;?</h2>
+      <p class="problem-subtitle">Si vous en avez assez des r&eacute;gimes extr&ecirc;mes, des r&egrave;gles impossibles &agrave; tenir, ou des m&eacute;thodes qui durent deux semaines puis s'effondrent&hellip;</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon"><svg viewBox="0 0 20 20"><path d="M13.3 7.8l-1.1-1.1L10 8.9 7.8 6.7 6.7 7.8 8.9 10l-2.2 2.2 1.1 1.1L10 11.1l2.2 2.2 1.1-1.1L11.1 10l2.2-2.2z"/></svg></div>
+          <h3>Restriction forte</h3>
+          <p>Les plans trop stricts d&eacute;clenchent la fatigue et la frustration apr&egrave;s quelques semaines.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon"><svg viewBox="0 0 20 20"><path d="M13.3 7.8l-1.1-1.1L10 8.9 7.8 6.7 6.7 7.8 8.9 10l-2.2 2.2 1.1 1.1L10 11.1l2.2 2.2 1.1-1.1L11.1 10l2.2-2.2z"/></svg></div>
+          <h3>Craquage et culpabilit&eacute;</h3>
+          <p>Le cycle classique&nbsp;: on craque, on culpabilise, on recommence &laquo;&nbsp;lundi&nbsp;&raquo;.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon"><svg viewBox="0 0 20 20"><path d="M13.3 7.8l-1.1-1.1L10 8.9 7.8 6.7 6.7 7.8 8.9 10l-2.2 2.2 1.1 1.1L10 11.1l2.2 2.2 1.1-1.1L11.1 10l2.2-2.2z"/></svg></div>
+          <h3>Aucune structure claire</h3>
+          <p>Sans plan simple, difficile de garder la constance dans une vraie vie sociale.</p>
+        </div>
+      </div>
+      <div class="callout-box">
+        <p>L'objectif n'est pas de promettre des miracles, mais de vous donner <strong>une routine simple</strong> + <strong>des options de repas plus l&eacute;g&egrave;res</strong> &mdash; sans vous couper de la vie r&eacute;elle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="container--narrow" style="padding:0;">
+        <h2 class="text-center">Qu'est-ce que c'est&nbsp;?</h2>
+        <p class="text-center">L'App Gelatina Bariatrica est un programme digital qui vous guide avec une approche pratico-pratique &mdash; sans hype, sans promesses miracles. L'id&eacute;e&nbsp;: vous aider &agrave; construire une structure durable, pas un sprint impossible &agrave; tenir.</p>
+        <ul class="feature-list">
+          <li>Un protocole simple &agrave; base de g&eacute;latine (routine quotidienne)</li>
+          <li>Un parcours guid&eacute; (quiz / personnalisation) pour adapter la routine</li>
+          <li>Des checklists et des trackers pour garder la constance</li>
+          <li>Un plan de maintien pour &eacute;viter l'effet &laquo;&nbsp;yo-yo&nbsp;&raquo;</li>
+          <li>Bonus contenu&nbsp;: recettes personnalis&eacute;es (dont une pizza &agrave; calories r&eacute;duites)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2 class="text-center">Pour qui c'est fait</h2>
+      <p class="problem-subtitle">Cette m&eacute;thode peut convenir si vous &ecirc;tes&nbsp;:</p>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="icon">&#128105;</div>
+          <h3>Une femme (souvent 35+)</h3>
+          <p>Qui veut une routine simple et r&eacute;p&eacute;table, sans rigidit&eacute;.</p>
+        </div>
+        <div class="who-card">
+          <div class="icon">&#128197;</div>
+          <h3>Maman ou personne occup&eacute;e</h3>
+          <p>Qui pr&eacute;f&egrave;re des &eacute;tapes claires &agrave; suivre au quotidien.</p>
+        </div>
+        <div class="who-card">
+          <div class="icon">&#127869;</div>
+          <h3>Vous voulez de la flexibilit&eacute;</h3>
+          <p>Une approche compatible avec une vraie vie sociale.</p>
+        </div>
+        <div class="who-card">
+          <div class="icon">&#129504;</div>
+          <h3>Vous cherchez la constance</h3>
+          <p>Petites actions r&eacute;p&eacute;t&eacute;es plut&ocirc;t qu'un sprint impossible.</p>
+        </div>
+      </div>
+      <p class="text-center" style="margin-top:32px;font-size:13px;color:var(--text-muted);"><em>Pas pour&nbsp;: ceux qui cherchent un traitement m&eacute;dical, des r&eacute;sultats garantis, ou une promesse du type &laquo;&nbsp;X kilos en Y jours&nbsp;&raquo;.</em></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="text-center">B&eacute;n&eacute;fices possibles (r&eacute;alistes)</h2>
+      <p class="text-center" style="max-width:540px;margin:0 auto;">Avec une utilisation r&eacute;guli&egrave;re, l'App Gelatina Bariatrica peut vous aider &agrave;&nbsp;:</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="icon">&#9200;</div>
+          <h3>Cr&eacute;er un rythme quotidien</h3>
+          <p>Une routine facile &agrave; maintenir au fil des semaines.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">&#127869;</div>
+          <h3>Choix plus &eacute;quilibr&eacute;s</h3>
+          <p>Soutenir des choix alimentaires plus l&eacute;gers et r&eacute;guliers.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">&#129504;</div>
+          <h3>Moins de charge mentale</h3>
+          <p>R&eacute;duire le &laquo;&nbsp;quoi faire aujourd'hui&nbsp;?&nbsp;&raquo; gr&acirc;ce &agrave; un plan clair.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">&#128202;</div>
+          <h3>Suivi et r&eacute;gularit&eacute;</h3>
+          <p>Aider &agrave; rester r&eacute;guli&egrave;re gr&acirc;ce aux trackers.</p>
+        </div>
+      </div>
+      <p class="text-center" style="margin-top:32px;font-size:13px;color:var(--text-muted);"><em>Les r&eacute;sultats varient d'une personne &agrave; l'autre. Aucun d&eacute;lai ou r&eacute;sultat pr&eacute;cis n'est garanti.</em></p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="container--narrow" style="padding:0;">
+        <h2 class="text-center">Ce que vous d&eacute;couvrirez &agrave; l'int&eacute;rieur</h2>
+        <div class="toc-section">
+          <div class="toc-item"><p><strong>Module 1</strong> &mdash; La routine g&eacute;latine expliqu&eacute;e pas &agrave; pas, avec un usage responsable</p></div>
+          <div class="toc-item"><p><strong>Module 2</strong> &mdash; Comment l'int&eacute;grer &agrave; vos habitudes existantes</p></div>
+          <div class="toc-item"><p><strong>Module 3</strong> &mdash; Trackers &amp; checklists pour rester r&eacute;guli&egrave;re</p></div>
+          <div class="toc-item"><p><strong>Module 4</strong> &mdash; Conseils de maintien pour r&eacute;duire le risque de reprise</p></div>
+          <div class="toc-item"><p><strong>Bonus</strong> &mdash; Recettes personnalis&eacute;es&nbsp;: petits-d&eacute;jeuners pratiques, d&icirc;ners &laquo;&nbsp;l&eacute;gers mais rassasiants&nbsp;&raquo;</p></div>
+          <div class="toc-item"><p><strong>Bonus exclusif</strong> &mdash; Recette de pizza all&eacute;g&eacute;e &agrave; calories r&eacute;duites</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container--narrow">
+      <div class="guarantee-section">
+        <h2>Garantie 60 jours</h2>
+        <p>Vous disposez d'une garantie satisfait ou rembours&eacute; de 60 jours. Testez l'App. Si ce n'est pas un bon compl&eacute;ment &agrave; votre routine, vous pouvez demander un remboursement via votre re&ccedil;u Digistore24. Sans questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="offer">
+    <div class="container">
+      <div class="pricing-wrapper">
+        <div class="pricing-card">
+          <span class="pricing-badge">Offre &mdash; Acc&egrave;s Imm&eacute;diat</span>
+          <h2>App Gelatina Bariatrica</h2>
+          <div class="price"><span>&euro;37</span></div>
+          <p class="price-sub">Paiement unique &middot; Acc&egrave;s digital instantan&eacute; &middot; Garantie 60 jours</p>
+          <a href="#" class="cta-main">Buy Now &mdash; Acc&egrave;s Instantan&eacute;</a>
+          <div class="trust-icons">
+            <span>&#128274; Paiement s&eacute;curis&eacute;</span>
+            <span>&#9989; Acc&egrave;s instantan&eacute;</span>
+            <span>&#128737; Garantie 60 jours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="compliance">
+    <div class="container">
+      <p>Les produits propos&eacute;s sur cette page ne sont pas garantis de r&eacute;ussir. Les r&eacute;sultats d&eacute;pendront de plusieurs facteurs, y compris la mani&egrave;re dont l'acheteur suit avec constance les conseils &eacute;ducatifs fournis. Les produits pr&eacute;sent&eacute;s ici sont vendus uniquement sur ce site, qui est l&eacute;gitime et ne viole pas les droits de tiers tels que les conditions Facebook, droits d'auteur, marques d&eacute;pos&eacute;es ou droits similaires.</p>
+      <p>Les paiements sont s&eacute;curis&eacute;s et trait&eacute;s par Digistore24 GmbH.</p>
+      <p style="margin-top:12px;">NGV Digital Ltda &mdash; Bahia, Lauro de Freitas, Itinga, 42739705<br>T&eacute;l&nbsp;: +55 34 9110-8066 &middot; Email&nbsp;: contatoleo@ngvdigital.site</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="/privacy-policy/">Politique de Confidentialit&eacute;</a>
+        <a href="/refund-policy/">Politique de Remboursement</a>
+        <a href="/terms-of-use/">Conditions d'Utilisation</a>
+        <a href="/contact/">Contact</a>
+        <a href="/imprint/">Mentions L&eacute;gales</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 App Gelatina Bariatrica. Tous droits r&eacute;serv&eacute;s.</p>
+    </div>
+  </footer>
+
+  <div style="text-align:center;padding:24px 0;">
+    <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/44515/IsTMGRlnqYpnh4k/salespage"></script>
+  </div>
+
+</body>
+</html>
