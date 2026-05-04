@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>App Gélatine Bariatrique — La routine simple à base de gélatine</title>
-  <meta name="description" content="Découvrez la routine gélatine + recettes personnalisées (y compris une pizza légère) pour soutenir une gestion du poids réaliste. Garantie 60 jours.">
+  <title>App Gélatine Bariatrique — Dr. Lefèvre révèle la recette gélatine</title>
+  <meta name="description" content="Dr. Marie Lefèvre révèle la recette gélatine pour perdre 7 kilos avant la fin du mois. Approche simple et réaliste, sans régime extrême.">
 
   <!-- Meta Pixel — TODO Fischer (task 86ah8ph6a) -->
   <script>
@@ -20,229 +20,110 @@
   fbq('track', 'PageView');
   </script>
 
+  <!-- VTurb preload (TODO: trocar PLACEHOLDER pelo ID real quando VSL ficar pronta) -->
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/00c3b583-8874-4e64-a32e-65f6dd9ba521/players/PLACEHOLDER/v4/player.js" as="script" fetchpriority="high">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
   <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
   <link rel="dns-prefetch" href="https://connect.facebook.net">
 
   <style>
-    /* ========== CLONE NUTAFLOW (cores reais extraidas de vsl.css + custom.css) ========== */
+    /* ========== Clone fiel nutaflow lp2.php (cores reais via curl + CSS analysis) ========== */
     :root{
-      --primary-color:#9f1435;       /* vinho/cereja escuro (logo + cabeçalhos) */
-      --primary-dark:#4b0014;        /* vinho mais escuro */
-      --button-color:#e11d48;        /* rosa-vermelho CTA */
-      --border-button-color:#ff8fab; /* borda rosa claro */
-      --contrast-color:#ffd166;      /* dourado destaque */
-      --text-color:#1c0b10;
-      --light-color:#fff5f7;         /* rosa creme background */
       --header-red:#a70c0c;
       --marquee-red:#810505;
+      --primary-color:#9f1435;
+      --button-color:#e11d48;
+      --text-color:#1c0b10;
+      --light-color:#fff;
+      --muted:#54595F;
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;font-family:'Jost',sans-serif}
-    body{background:var(--light-color);color:var(--text-color);line-height:1.5;-webkit-font-smoothing:antialiased}
+    body{background:#fff;color:var(--text-color);line-height:1.55;-webkit-font-smoothing:antialiased}
     img{max-width:100%;height:auto;display:block}
     a{text-decoration:none;color:inherit}
-    button{cursor:pointer;font-family:'Jost',sans-serif}
 
-    /* ====== Red Header (custom.css real) ====== */
+    /* ===== Red Header (igual nutaflow) ===== */
     .red-header{background:var(--header-red);display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
-    .red-header .menu{color:#fff;font-size:24px;width:23px}
+    .red-header .menu{color:#fff;font-size:24px;width:23px;font-weight:300}
     .red-header h1{flex-grow:1;text-align:center;color:#fff;font-size:2rem;font-weight:400;letter-spacing:2px;margin:0}
-    .red-header .time{color:#fff;font-size:11px;opacity:.85}
+    .red-header .time{color:#fff;font-size:11px;opacity:.85;width:80px;text-align:right}
 
-    .marquee-bar{background:var(--marquee-red);color:#fff;letter-spacing:2px;text-transform:uppercase;padding:4px 0;font-weight:400;font-size:11px;overflow:hidden;white-space:nowrap}
-    .marquee-bar marquee{display:block}
+    /* Marquee */
+    .marquee-bar{background:var(--marquee-red);color:#fff;letter-spacing:2px;text-transform:uppercase;padding:4px 0;font-weight:400;font-size:11px}
 
-    /* ====== Container Principal ====== */
-    .container-principal{max-width:900px;margin:0 auto;padding:14px 16px 20px;background:var(--light-color);text-align:center}
-    .container-principal h1{font-size:30px;text-align:left;font-weight:800;line-height:1.2;color:var(--text-color);margin-bottom:14px}
-    .container-principal h1 strong{color:var(--primary-color)}
-    .txt-info{text-align:left;color:#54595F;font-size:12px;padding-top:10px;line-height:1.5}
-    .txt-info b{color:#000;font-size:13px;font-weight:700}
-    .img-placeholder{width:80%;max-width:500px;margin:20px auto;aspect-ratio:1.3/1;background:linear-gradient(135deg,#ffe4ec 0%,#ffd166 100%);border:5px double rgba(159,20,53,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:64px}
+    /* ===== Container principal ===== */
+    .principal{max-width:900px;margin:0 auto;padding:14px 16px 22px;background:#fff}
+    .author-row{display:flex;align-items:center;gap:12px;padding:10px 0 16px;border-bottom:1px solid #eee;margin-bottom:18px}
+    .author-photo{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--primary-color),var(--button-color));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:2px solid #f0d4dc}
+    .author-info{flex:1}
+    .author-name{font-weight:800;font-size:15px;color:var(--text-color)}
+    .author-meta{font-size:12px;color:var(--muted);margin-top:1px}
+    .principal h1{font-size:32px;text-align:left;font-weight:900;line-height:1.18;color:var(--text-color);margin-bottom:18px;letter-spacing:-.3px}
+    .principal h1 strong{color:var(--primary-color)}
 
-    /* ====== "Comme vu sur" logos imprensa FR ====== */
-    .logos{max-width:900px;margin:18px auto;text-align:center;padding:18px 16px;background:#fff;border-top:1px solid rgba(159,20,53,.15);border-bottom:1px solid rgba(159,20,53,.15)}
-    .logos-label{font-size:11px;color:#54595F;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;font-weight:700}
-    .logos-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:18px}
-    .logo-pill{font-weight:800;font-size:15px;letter-spacing:.3px;white-space:nowrap;color:#1c0b10;opacity:.85}
-    .logo-pill.le-monde{font-family:Georgia,serif;font-style:italic;font-weight:700}
-    .logo-pill.le-figaro{font-family:Georgia,serif;font-weight:700}
-    .logo-pill.tf1{background:#003a70;color:#fff;padding:5px 9px;border-radius:4px;font-family:Arial,sans-serif;font-weight:900;font-size:14px;letter-spacing:0}
-    .logo-pill.france24{background:#000;color:#fff;padding:5px 9px;border-radius:4px;font-family:Arial,sans-serif;font-weight:900;font-size:13px;letter-spacing:0}
-    .logo-pill.bfm{background:#003594;color:#fff;padding:5px 9px;border-radius:4px;font-family:Arial,sans-serif;font-weight:900;font-size:13px;letter-spacing:0}
+    /* ===== Video VTurb ===== */
+    .video-wrap{margin:14px auto 18px;max-width:780px}
+    .video-wrap vturb-smartplayer{display:block;margin:0 auto;width:100%;border-radius:8px;overflow:hidden}
+    .video-placeholder{aspect-ratio:16/9;background:#000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#666;font-size:14px;border:1px solid #333;position:relative}
+    .video-placeholder::before{content:"▶";font-size:48px;color:#666}
+    .video-placeholder::after{content:"VTurb player — TODO: trocar PLACEHOLDER pelo ID real";position:absolute;bottom:14px;font-size:11px;color:#888}
 
-    /* ====== Quiz section ====== */
-    .quiz-section{background:#fff;padding:30px 16px;text-align:center;border-bottom:1px solid rgba(159,20,53,.1)}
-    .quiz-section h2{font-size:26px;font-weight:900;text-align:center;margin-bottom:8px;color:var(--text-color);line-height:1.25}
-    .quiz-section h2 .accent{color:var(--button-color)}
-    .quiz-sub{color:#54595F;font-size:14px;margin-bottom:24px;font-weight:500}
+    /* ===== Floating notification "Vient d'acheter" ===== */
+    .pop-buy{position:fixed;bottom:18px;left:18px;background:#fff;border:1px solid #f0d4dc;border-radius:10px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:10px;z-index:9999;max-width:280px;animation:slideInUp .5s ease}
+    .pop-buy.is-hidden{display:none}
+    .pop-buy-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary-color),var(--button-color));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+    .pop-buy-text{font-size:12px;line-height:1.35;color:var(--text-color)}
+    .pop-buy-text strong{color:var(--button-color)}
+    .pop-buy-close{background:none;border:none;color:#888;font-size:18px;line-height:1;padding:0 4px;cursor:pointer}
 
-    .progress-track{height:10px;background:#fce7ee;border-radius:99px;overflow:hidden;max-width:480px;margin:0 auto 26px}
-    .progress-track span{display:block;height:100%;background:linear-gradient(90deg,var(--button-color),var(--primary-color));transition:width .4s ease;border-radius:99px;width:14%}
-
-    .step{display:none;animation:fadeIn .35s ease;max-width:520px;margin:0 auto}
-    .step.is-active{display:block}
-    .step h4{font-size:21px;font-weight:800;text-align:center;color:var(--text-color);margin-bottom:18px;line-height:1.35}
-    .step h4 small{display:block;font-size:11px;font-weight:800;color:var(--button-color);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
-
-    /* Botoes do quiz: rosa-vermelho CTA real */
-    .option{display:block;width:100%;padding:15px 20px;background:var(--button-color);color:#fff;border:2px solid var(--border-button-color);border-radius:10px;font-size:15px;font-weight:700;margin-bottom:10px;text-align:center;transition:all .25s;-webkit-tap-highlight-color:transparent}
-    .option:hover,.option:active{background:var(--primary-color);border-color:#fff;transform:translateY(-1px);box-shadow:0 6px 16px rgba(225,29,72,.35)}
-
-    .btn-back{font-size:13px;color:#888;background:none;border:none;margin-top:6px;text-decoration:underline}
-
-    /* Loading */
-    .loading{display:none;padding:30px 16px;text-align:center}
-    .loading.is-active{display:block}
-    .loading-title{font-size:20px;font-weight:800;color:var(--text-color);margin-bottom:14px}
-    .loading-bar{height:14px;background:#fce7ee;border-radius:99px;overflow:hidden;max-width:380px;margin:0 auto 14px;border:1px solid var(--border-button-color)}
-    .loading-bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--button-color),var(--primary-color));border-radius:99px;animation:fillBar 9s linear forwards}
-    .loading-counter{font-size:36px;font-weight:900;color:var(--button-color);font-variant-numeric:tabular-nums}
-
-    /* ====== Result ====== */
-    .result{display:none;padding:30px 16px;background:var(--light-color);animation:fadeIn .5s ease}
-    .result.is-active{display:block}
-    .result h2{text-align:center;font-size:32px;font-weight:900;color:var(--primary-color);margin-bottom:8px;line-height:1.2}
-    .result h2 .check{color:#16521d}
-    .result-msg{text-align:center;color:#3a2530;margin-bottom:18px;font-size:15px;line-height:1.65;max-width:540px;margin-left:auto;margin-right:auto}
-    .result-msg strong{color:var(--text-color)}
-
-    .scarcity{background:#fff;border:2px solid var(--button-color);color:var(--primary-dark);font-weight:700;text-align:center;padding:14px 14px;border-radius:10px;margin:18px auto;font-size:14px;max-width:540px;line-height:1.5}
-    .scarcity strong{color:var(--button-color);font-size:17px}
-
-    /* ====== 3 PACOTES (.products .item) ====== */
-    .products{padding:20px 0;max-width:1100px;margin:0 auto}
-    .pb-4{padding-bottom:0}
-    .pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 12px}
-    .item{background:#fff;border:2px solid #e5e7eb;border-radius:14px;text-align:center;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
-    .item:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(159,20,53,.2)}
-    .item.featured{border:3px solid var(--contrast-color);box-shadow:0 8px 28px rgba(255,209,102,.4)}
-    .item-header{background:var(--primary-color);color:#fff;padding:10px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px}
-    .item.featured .item-header{background:var(--contrast-color);color:var(--primary-dark)}
-    .item-body{padding:18px 14px}
-    .pack-period{font-size:12px;color:#54595F;margin-bottom:10px}
-    .pack-img{width:60%;max-width:120px;margin:0 auto 8px;aspect-ratio:1/1;background:linear-gradient(135deg,#ffe4ec 0%,#ffd166 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:42px}
-    .pack-save{display:inline-block;background:#fff5f7;color:var(--button-color);font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;margin:6px 0;border:1px solid var(--border-button-color)}
-    .pack-old{font-size:13px;color:#999;text-decoration:line-through}
-    .pack-price{font-size:32px;font-weight:900;color:var(--button-color);line-height:1;margin:4px 0}
-    .pack-price small{font-size:14px;font-weight:700;color:#888;letter-spacing:0}
-    .pack-each{font-size:11px;color:#54595F;margin-bottom:8px;font-style:italic}
-    .pack-shipping{display:inline-block;font-size:11px;font-weight:800;color:var(--primary-color);margin-bottom:10px}
-    .pack-cta{display:block;width:90%;margin:0 auto;padding:14px 16px;background:var(--button-color);color:#fff;border:2px solid var(--border-button-color);border-radius:10px;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;animation:pulse 2s ease-in-out infinite}
-    .pack-cta:hover{background:var(--primary-color)}
-    .card-flags-placeholder{display:inline-block;font-size:18px;color:#888;margin-top:8px;letter-spacing:4px}
-
-    /* ====== Trust badges (gmp/fda/nat/foreign) ====== */
-    .trust-badges{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:600px;margin:30px auto;padding:0 16px}
-    .trust-badge{text-align:center;padding:14px 6px;background:#fff;border-radius:10px;border:1px solid #f0d4dc}
-    .trust-badge-icon{font-size:26px;margin-bottom:4px}
-    .trust-badge-text{font-size:9px;font-weight:800;color:#54595F;line-height:1.2;letter-spacing:.3px;text-transform:uppercase}
-
-    /* ====== Garantia (#guarantee real -- background primary) ====== */
-    #guarantee{background:var(--primary-color);color:#fff;padding:36px 16px;margin:30px 0}
-    #guarantee .container{max-width:1100px;margin:0 auto;text-align:center}
-    #guarantee h2{color:#fff;font-size:30px;font-weight:900;margin-bottom:6px;line-height:1.2}
-    #guarantee h2 span{color:var(--contrast-color)}
-    #guarantee h3{color:var(--contrast-color);font-size:16px;font-weight:800;margin-bottom:18px;text-transform:uppercase;letter-spacing:1.5px}
-    .guarantee-seal{font-size:80px;margin:0 auto 14px}
-    #guarantee p{font-size:15px;line-height:1.7;margin-bottom:12px;max-width:680px;margin-left:auto;margin-right:auto}
-    #guarantee a{color:var(--contrast-color);text-decoration:underline;font-weight:700}
-
-    /* ====== Section title genérico ====== */
-    .section-title{font-size:28px;font-weight:900;text-align:center;margin:36px auto 24px;color:var(--text-color);line-height:1.25;padding:0 16px}
-    .section-title .accent{color:var(--button-color)}
-
-    /* ====== Testimonials (com .reviewed-on) ====== */
-    .testimonials{max-width:780px;margin:0 auto;padding:0 16px}
-    .testi{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;border:1px solid #f0d4dc;box-shadow:0 2px 8px rgba(159,20,53,.05)}
-    .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-    .testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--primary-color),var(--button-color));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
-    .testi-name{font-weight:800;font-size:15px;color:var(--text-color)}
-    .testi-loc{font-size:12px;color:#54595F}
-    .testi-stars{color:#ffd166;font-size:16px;margin-bottom:6px;letter-spacing:1px}
-    .testi-headline{font-weight:800;font-size:16px;color:var(--text-color);margin-bottom:6px}
-    .testi-body{font-size:14px;color:#3a2530;line-height:1.65}
-    .reviewed-on{font-size:12px;color:#888;margin-top:12px;padding-top:10px;border-top:1px solid #f0d4dc;font-style:italic}
-
-    /* ====== FAQ section (escura, igual nutaflow) ====== */
-    .faq-section{background:var(--primary-dark);padding:40px 16px;color:#fff;margin-top:30px}
-    .faq-section h2{color:#fff;text-align:center;font-size:26px;font-weight:900;margin-bottom:24px}
-    .faq{max-width:680px;margin:0 auto}
-    .accordion-header{border-bottom:1px solid rgba(255,255,255,.15)}
-    .faq-q{padding:18px 4px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;display:flex;justify-content:space-between;align-items:center;background:none;border:none;width:100%;text-align:left}
-    .faq-q::after{content:"+";font-size:24px;font-weight:300;color:var(--contrast-color);transition:transform .2s}
-    .accordion-header.is-open .faq-q::after{content:"−"}
-    .faq-a{display:none;padding:0 4px 16px;font-size:14px;color:#f3d4dc;line-height:1.7}
-    .accordion-header.is-open .faq-a{display:block}
-
-    /* ====== Authority ====== */
-    .authority{background:#fff;padding:36px 16px;text-align:center;border-top:1px solid #f0d4dc}
-    .authority-inner{max-width:680px;margin:0 auto}
-    .authority h2{font-size:26px;font-weight:900;margin-bottom:18px;color:var(--text-color)}
-    .authority h2 .accent{color:var(--primary-color)}
-    .authority-photo{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--primary-color),var(--button-color));color:#fff;display:flex;align-items:center;justify-content:center;font-size:56px;margin:0 auto 14px;border:4px solid var(--contrast-color)}
-    .authority-name{font-size:22px;font-weight:900;color:var(--text-color);margin-bottom:4px}
-    .authority-cred{font-size:13px;color:var(--button-color);font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
-    .authority-bio{font-size:14px;color:#3a2530;line-height:1.7;text-align:left}
-    .authority-bio strong{color:var(--text-color)}
-
-    /* ====== Urgent CTA final ====== */
-    .urgent-cta{background:var(--primary-dark);color:#fff;padding:30px 16px;text-align:center;margin-top:30px}
-    .urgent-cta h2{color:var(--contrast-color);font-size:28px;font-weight:900;margin-bottom:10px;line-height:1.2;text-transform:uppercase}
-    .urgent-cta p{font-size:15px;color:#fff;margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto}
-
-    /* ====== Comments (.comments-container .comment .comment-data .comment.answer) ====== */
-    .comments-container{max-width:780px;margin:36px auto;padding:0 16px}
-    .comments-count{font-size:22px;font-weight:900;margin-bottom:18px;color:var(--text-color);text-align:center}
-    .comment{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0d4dc}
+    /* ===== Comments (clone .comments-container .comment .comment-data) ===== */
+    .comments-container{max-width:780px;margin:24px auto 0;padding:0 16px}
+    .comments-count{font-size:22px;font-weight:900;margin-bottom:18px;color:var(--text-color);padding-bottom:12px;border-bottom:2px solid #eee}
+    .comment{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f0f0}
     .comment.answer{margin-left:48px;background:#fff5f7;border-radius:10px;padding:12px;border-bottom:none}
-    .comment-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#9f1435,#e11d48);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+    .comment-avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
     .comment-data{flex:1}
     .comment-name{font-weight:800;font-size:14px;color:var(--text-color)}
-    .comment-text{font-size:13px;color:#3a2530;line-height:1.55;margin-top:2px}
-    .comment-meta{font-size:11px;color:#888;margin-top:6px;display:flex;gap:14px}
-    .comments-closed{text-align:center;font-size:13px;font-weight:800;color:#fff;padding:14px;background:var(--primary-color);border-radius:8px;margin-top:18px}
+    .comment-text{font-size:14px;color:#3a2530;line-height:1.55;margin-top:3px}
+    .comment-meta{font-size:11px;color:#888;margin-top:6px;display:flex;gap:14px;align-items:center}
+    .comment-likes{font-weight:700;color:var(--primary-color)}
+    .comments-closed{text-align:center;font-size:14px;font-weight:800;color:#fff;padding:14px;background:var(--primary-color);border-radius:8px;margin:18px 0}
 
-    /* ====== Disclaimer ====== */
-    .disclaimer{padding:24px 16px;text-align:center;background:#fff;border-top:1px solid #f0d4dc}
-    .disclaimer p{max-width:680px;margin:0 auto 6px;font-size:11px;color:#888;line-height:1.6}
+    /* Cores avatares (variadas) */
+    .av1{background:linear-gradient(135deg,#9f1435,#e11d48)}
+    .av2{background:linear-gradient(135deg,#0c557b,#148cca)}
+    .av3{background:linear-gradient(135deg,#16521d,#289736)}
+    .av4{background:linear-gradient(135deg,#840b0b,#d41212)}
+    .av5{background:linear-gradient(135deg,#4f4f4f,#7a7a7a)}
+    .av6{background:linear-gradient(135deg,#b9945e,#d8c3a5)}
+    .av7{background:linear-gradient(135deg,#1c0b10,#4b0014)}
 
-    /* ====== Footer (vermelho real) ====== */
-    .site-footer{background:var(--header-red);padding:0 0 18px;text-align:center;color:#fff}
-    .site-footer h3{background:#000;color:#fff;font-size:17px;padding:10px 25px;margin-bottom:0;letter-spacing:1px}
+    /* ===== Footer ===== */
+    .site-footer{background:var(--header-red);padding:0 0 14px;text-align:center;color:#fff;margin-top:30px}
     .site-footer .links{display:flex;flex-wrap:wrap;justify-content:center;padding:14px 0}
     .site-footer .links a{color:#fff;padding:14px 18px;font-weight:500;font-size:14px}
     .site-footer .links a:hover{text-decoration:underline}
-    .site-footer .copy{font-size:12px;color:#ffe5e5;padding-bottom:8px}
+    .site-footer .copy{font-size:12px;color:#ffe5e5;padding-bottom:6px}
 
-    /* ====== Animations ====== */
-    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fillBar{from{width:0%}to{width:100%}}
-    @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 4px 12px rgba(225,29,72,.4)}50%{transform:scale(1.03);box-shadow:0 8px 22px rgba(225,29,72,.6)}}
-    @keyframes scrollMarquee{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+    @keyframes slideInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    /* ====== Mobile ====== */
+    /* ===== Mobile ===== */
     @media (max-width:996px){
-      .container-principal h1{font-size:23px}
       .red-header h1{font-size:1.7rem}
-      .img-placeholder{width:100%}
-      .pack-grid{grid-template-columns:1fr;gap:14px}
-      .trust-badges{grid-template-columns:repeat(5,1fr);gap:4px}
-      .trust-badge-text{font-size:8px}
-      .quiz-section h2{font-size:21px}
-      #guarantee h2{font-size:24px}
-      .section-title{font-size:22px}
-      .urgent-cta h2{font-size:22px}
-      .logos-row{gap:12px}
-      .logo-pill{font-size:13px}
-      .testi-headline{font-size:15px}
+      .principal h1{font-size:24px}
       .comments-count{font-size:18px}
-    }
-    @media (max-width:450px){
-      .pack-img{font-size:36px}
-      .pack-price{font-size:28px}
+      .pop-buy{left:8px;right:8px;bottom:12px;max-width:none}
     }
   </style>
 </head>
@@ -255,528 +136,240 @@
     <span class="time">Mis à jour <span id="now-time">il y a 30 min</span></span>
   </header>
 
+  <!-- Ticker urgência -->
   <div class="marquee-bar">
-    <marquee scrollamount="6">⚠️ URGENT — LECTURE OBLIGATOIRE — LA NOUVELLE ROUTINE GÉLATINE FAIT SENSATION EN FRANCE — STOCK LIMITÉ — ⚠️</marquee>
+    <marquee scrollamount="6">Mises à jour quotidiennes sur le bien-être et la santé · Mises à jour quotidiennes sur le bien-être et la santé · Mises à jour quotidiennes sur le bien-être et la santé · Mises à jour quotidiennes sur le bien-être et la santé</marquee>
   </div>
 
   <!-- ===== Container Principal ===== -->
-  <main class="container-principal">
-    <h1>La <strong>routine gélatine</strong> qui aide les Françaises 35+ à retrouver une silhouette légère sans régime extrême</h1>
+  <main class="principal">
 
-    <p class="txt-info"><b>Par Dr. Marie Lefèvre, nutritionniste</b> — Mis à jour le <span id="today"></span><br>
-    Une approche pratique, sans rigidité, qui combine une routine simple à base de gélatine et des recettes personnalisées (y compris une <b>pizza allégée</b>) pour soutenir une gestion du poids réaliste.</p>
+    <!-- Author + data -->
+    <div class="author-row">
+      <div class="author-photo">👩‍⚕️</div>
+      <div class="author-info">
+        <div class="author-name">Dr. Marie Lefèvre</div>
+        <div class="author-meta">Mis à jour il y a 30 minutes <span id="today"></span></div>
+      </div>
+    </div>
 
-    <!-- Imagem produto (placeholder) -->
-    <div class="img-placeholder">🥄✨</div>
+    <!-- Headline principal -->
+    <h1>Dr. Lefèvre révèle la recette à base de <strong>gélatine</strong> pour perdre 7 kilos avant la fin du mois</h1>
+
+    <!-- VTurb player -->
+    <div class="video-wrap">
+      <div class="video-placeholder"></div>
+      <!-- Quando o ID do VTurb chegar, substituir o placeholder acima por:
+      <vturb-smartplayer id="vid-PLACEHOLDER" style="display:block;margin:0 auto;width:100%"></vturb-smartplayer>
+      <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/00c3b583-8874-4e64-a32e-65f6dd9ba521/players/PLACEHOLDER/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+      -->
+    </div>
+
   </main>
 
-  <!-- ===== Logos imprensa FR (briefing PDF: Le Monde, Le Figaro, TF1, France 24, BFMTV) ===== -->
-  <div class="logos">
-    <div class="logos-label">Comme vu sur</div>
-    <div class="logos-row">
-      <span class="logo-pill le-monde">Le Monde</span>
-      <span class="logo-pill le-figaro">Le Figaro</span>
-      <span class="logo-pill tf1">TF1</span>
-      <span class="logo-pill france24">FRANCE 24</span>
-      <span class="logo-pill bfm">BFMTV</span>
-    </div>
-  </div>
-
-  <!-- ===== Quiz 7 etapas ===== -->
-  <section class="quiz-section">
-    <h2>Trouvez votre formule <span class="accent">App Gélatine Bariatrique</span></h2>
-    <p class="quiz-sub">Répondez à 7 questions rapides pour recevoir votre plan personnalisé</p>
-
-    <div class="progress-track"><span id="progress"></span></div>
-
-    <!-- Step 1: Idade -->
-    <div class="step is-active" data-step="1">
-      <h4><small>Étape 1 / 7</small>Quel âge avez-vous ?</h4>
-      <button class="option" onclick="next('under20')">Moins de 20 ans</button>
-      <button class="option" onclick="next('20-29')">20 à 29 ans</button>
-      <button class="option" onclick="next('30-39')">30 à 39 ans</button>
-      <button class="option" onclick="next('40-49')">40 à 49 ans</button>
-      <button class="option" onclick="next('50-59')">50 à 59 ans</button>
-      <button class="option" onclick="next('60+')">60 ans ou plus</button>
-    </div>
-
-    <!-- Step 2: Peso -->
-    <div class="step" data-step="2">
-      <h4><small>Étape 2 / 7</small>Quel est votre poids actuel ?</h4>
-      <button class="option" onclick="next('<55')">Moins de 55 kg</button>
-      <button class="option" onclick="next('55-65')">55 à 65 kg</button>
-      <button class="option" onclick="next('65-75')">65 à 75 kg</button>
-      <button class="option" onclick="next('75-85')">75 à 85 kg</button>
-      <button class="option" onclick="next('85-95')">85 à 95 kg</button>
-      <button class="option" onclick="next('95+')">Plus de 95 kg</button>
-    </div>
-
-    <!-- Step 3: Altura -->
-    <div class="step" data-step="3">
-      <h4><small>Étape 3 / 7</small>Quelle est votre taille ?</h4>
-      <button class="option" onclick="next('<150')">Moins de 1m50</button>
-      <button class="option" onclick="next('150-160')">1m50 à 1m60</button>
-      <button class="option" onclick="next('160-165')">1m60 à 1m65</button>
-      <button class="option" onclick="next('165-170')">1m65 à 1m70</button>
-      <button class="option" onclick="next('170-180')">1m70 à 1m80</button>
-      <button class="option" onclick="next('180+')">Plus de 1m80</button>
-    </div>
-
-    <!-- Step 4: Objetivo -->
-    <div class="step" data-step="4">
-      <h4><small>Étape 4 / 7</small>Combien de kilos voulez-vous perdre ?</h4>
-      <button class="option" onclick="next('5-10')">5 à 10 kg</button>
-      <button class="option" onclick="next('10-15')">10 à 15 kg</button>
-      <button class="option" onclick="next('15-25')">15 à 25 kg</button>
-      <button class="option" onclick="next('25+')">Plus de 25 kg</button>
-    </div>
-
-    <!-- Step 5: Áreas saúde -->
-    <div class="step" data-step="5">
-      <h4><small>Étape 5 / 7</small>Quelles autres zones santé voulez-vous améliorer ?</h4>
-      <button class="option" onclick="next('energie')">Énergie au quotidien</button>
-      <button class="option" onclick="next('digestion')">Digestion</button>
-      <button class="option" onclick="next('peau')">Peau & cheveux</button>
-      <button class="option" onclick="next('sommeil')">Sommeil</button>
-      <button class="option" onclick="next('plusieurs')">Plusieurs des choix ci-dessus</button>
-    </div>
-
-    <!-- Step 6: Partes do corpo -->
-    <div class="step" data-step="6">
-      <h4><small>Étape 6 / 7</small>De quelles parties du corps voulez-vous perdre du gras ?</h4>
-      <button class="option" onclick="next('ventre')">Ventre</button>
-      <button class="option" onclick="next('hanches')">Hanches & cuisses</button>
-      <button class="option" onclick="next('bras')">Bras</button>
-      <button class="option" onclick="next('global')">Global</button>
-    </div>
-
-    <!-- Step 7: Tempo -->
-    <div class="step" data-step="7">
-      <h4><small>Étape 7 / 7</small>Combien de minutes par jour pouvez-vous y consacrer ?</h4>
-      <button class="option" onclick="finish('5min')">5 minutes</button>
-      <button class="option" onclick="finish('10min')">10 minutes</button>
-      <button class="option" onclick="finish('15min')">15 minutes ou plus</button>
-    </div>
-
-    <!-- Loading -->
-    <div class="loading" id="loading">
-      <div class="loading-title">Calcul de votre formule personnalisée...</div>
-      <div class="loading-bar"><span></span></div>
-      <div class="loading-counter"><span id="countdown">9</span>s</div>
-    </div>
-  </section>
-
-  <!-- ===== Result + 3 Pacotes ===== -->
-  <section class="result" id="result">
-
-    <h2>Félicitations <span class="check">✓</span></h2>
-    <p class="result-msg">Selon vos réponses, vous êtes <strong>une candidate idéale</strong> pour le programme <strong>App Gélatine Bariatrique</strong>. Découvrez ci-dessous l'offre exclusive du jour réservée aux personnes ayant complété le quiz.</p>
-
-    <div class="scarcity">
-      ⚠️ <strong>Attention :</strong> il ne reste que <strong id="stock">218</strong> accès au tarif promotionnel
-    </div>
-
-    <!-- 3 PACOTES (.products .item) -->
-    <div class="products pb-4">
-      <div class="pack-grid">
-
-        <!-- Pack 6 mois Premium (BEST VALUE - featured) -->
-        <div class="item featured">
-          <div class="item-header">★ Meilleure offre</div>
-          <div class="item-body">
-            <div class="pack-img">📱👑</div>
-            <div class="pack-period">Accès 6 mois Premium</div>
-            <div class="pack-save">Économisez €157</div>
-            <div class="pack-old">€304</div>
-            <div class="pack-price">€147<small>,00</small></div>
-            <div class="pack-each">paiement unique · €24,50/mois</div>
-            <div class="pack-shipping">🎁 Tous les bonus inclus</div>
-            <a href="#" class="pack-cta">Ajouter au panier</a>
-            <div class="card-flags-placeholder">💳 💳 💳</div>
-          </div>
-        </div>
-
-        <!-- Pack 3 mois -->
-        <div class="item">
-          <div class="item-header">Populaire</div>
-          <div class="item-body">
-            <div class="pack-img">📱✨</div>
-            <div class="pack-period">Accès 3 mois</div>
-            <div class="pack-save">Économisez €60</div>
-            <div class="pack-old">€157</div>
-            <div class="pack-price">€97<small>,00</small></div>
-            <div class="pack-each">paiement unique · €32,30/mois</div>
-            <div class="pack-shipping">🎁 + Pizza allégée incluse</div>
-            <a href="#" class="pack-cta">Ajouter au panier</a>
-            <div class="card-flags-placeholder">💳 💳 💳</div>
-          </div>
-        </div>
-
-        <!-- Pack 1 mois -->
-        <div class="item">
-          <div class="item-header">Découverte</div>
-          <div class="item-body">
-            <div class="pack-img">📱</div>
-            <div class="pack-period">Accès 1 mois</div>
-            <div class="pack-old">€74</div>
-            <div class="pack-price">€37<small>,00</small></div>
-            <div class="pack-each">paiement unique</div>
-            <div class="pack-shipping">📩 Accès immédiat</div>
-            <a href="#" class="pack-cta">Ajouter au panier</a>
-            <div class="card-flags-placeholder">💳 💳 💳</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Trust badges -->
-    <div class="trust-badges">
-      <div class="trust-badge"><div class="trust-badge-icon">🔒</div><div class="trust-badge-text">Paiement<br>Sécurisé</div></div>
-      <div class="trust-badge"><div class="trust-badge-icon">📩</div><div class="trust-badge-text">Accès<br>Immédiat</div></div>
-      <div class="trust-badge"><div class="trust-badge-icon">🛡️</div><div class="trust-badge-text">Garantie<br>60 Jours</div></div>
-      <div class="trust-badge"><div class="trust-badge-icon">🇫🇷</div><div class="trust-badge-text">Conçu en<br>France</div></div>
-      <div class="trust-badge"><div class="trust-badge-icon">📱</div><div class="trust-badge-text">100%<br>Numérique</div></div>
-    </div>
-
-  </section>
-
-  <!-- ===== Garantia (#guarantee) ===== -->
-  <section id="guarantee">
-    <div class="container">
-      <div class="guarantee-seal">🛡️</div>
-      <h2>100% Satisfait ou <span>Remboursé</span></h2>
-      <h3>Garantie inconditionnelle de 60 jours</h3>
-      <p>Testez l'App Gélatine Bariatrique pendant <b>60 jours sans aucun risque</b>. Si ce programme n'est pas un bon complément à votre routine, demandez un remboursement complet via votre reçu Digistore24.</p>
-      <p><strong>Sans questions, sans pièges, sans paperasse.</strong></p>
-      <p>Contact : <a href="mailto:contact@ngvdigital.site">contact@ngvdigital.site</a></p>
-    </div>
-  </section>
-
-  <!-- ===== Testimonials ===== -->
-  <h2 class="section-title">Ce que disent les <span class="accent">utilisatrices</span> de l'App</h2>
-  <div class="testimonials">
-
-    <div class="testi">
-      <div class="testi-head">
-        <div class="testi-avatar">M</div>
-        <div>
-          <div class="testi-name">Marie L.</div>
-          <div class="testi-loc">Lyon, France</div>
-        </div>
-      </div>
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-headline">Une routine que je tiens vraiment !</div>
-      <div class="testi-body">À 42 ans, j'avais essayé tellement de régimes... Ici j'ai trouvé une routine simple que je peux suivre même les jours chargés. Les recettes sont vraiment savoureuses, surtout la pizza allégée — mes enfants en redemandent ! Je ne pensais pas que ça pourrait être aussi facile.</div>
-      <div class="reviewed-on">26 personnes ont trouvé cela utile</div>
-    </div>
-
-    <div class="testi">
-      <div class="testi-head">
-        <div class="testi-avatar">S</div>
-        <div>
-          <div class="testi-name">Sophie B.</div>
-          <div class="testi-loc">Marseille, France</div>
-        </div>
-      </div>
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-headline">Plus de craquages le soir</div>
-      <div class="testi-body">Ce qui m'a aidée, ce sont les checklists — voir mes petits "✓" du jour me motive à continuer. La routine est tellement simple qu'elle devient automatique. Mon mari a même remarqué que je mange plus calmement, sans pression.</div>
-      <div class="reviewed-on">21 personnes ont trouvé cela utile</div>
-    </div>
-
-    <div class="testi">
-      <div class="testi-head">
-        <div class="testi-avatar">C</div>
-        <div>
-          <div class="testi-name">Claire D.</div>
-          <div class="testi-loc">Toulouse, France</div>
-        </div>
-      </div>
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-headline">Enfin une approche réaliste</div>
-      <div class="testi-body">Le plan de maintien est le vrai plus de ce programme. Je n'ai pas peur de l'effet yo-yo cette fois. Approche flexible, pas de privation totale, je suis tranquille. Et la garantie de 60 jours m'a vraiment rassurée pour me lancer.</div>
-      <div class="reviewed-on">19 personnes ont trouvé cela utile</div>
-    </div>
-
-    <div class="testi">
-      <div class="testi-head">
-        <div class="testi-avatar">A</div>
-        <div>
-          <div class="testi-name">Amélie F.</div>
-          <div class="testi-loc">Bordeaux, France</div>
-        </div>
-      </div>
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-headline">Recettes top et simples à faire</div>
-      <div class="testi-body">Maman de 3 enfants, je n'ai pas le temps pour des recettes compliquées. L'App propose des options ultra-simples pour les midis et les dîners. La pizza allégée est devenue un classique chez nous le vendredi soir.</div>
-      <div class="reviewed-on">19 personnes ont trouvé cela utile</div>
-    </div>
-
-    <div class="testi">
-      <div class="testi-head">
-        <div class="testi-avatar">É</div>
-        <div>
-          <div class="testi-name">Élodie P.</div>
-          <div class="testi-loc">Nantes, France</div>
-        </div>
-      </div>
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-headline">Gros résultats sur mon humeur aussi</div>
-      <div class="testi-body">Ce que je n'attendais pas, c'est l'effet sur ma charge mentale. Avant je passais mes soirées à culpabiliser sur ce que j'avais mangé. Maintenant j'ai un cadre, je suis ma routine, et je dors mieux. Vraiment recommandé.</div>
-      <div class="reviewed-on">19 personnes ont trouvé cela utile</div>
-    </div>
-
-  </div>
-
-  <!-- ===== FAQ Section (escura como nutaflow) ===== -->
-  <section class="faq-section">
-    <h2>Questions fréquentes</h2>
-    <div class="faq">
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">L'App Gélatine Bariatrique est-elle sûre ?</button>
-        <div class="faq-a">Oui. C'est un programme éducatif d'accompagnement, sans aucun produit ni traitement médical. Si vous avez des conditions de santé spécifiques, consultez votre médecin avant de débuter.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Combien de temps pour voir des résultats ?</button>
-        <div class="faq-a">Les résultats varient selon votre profil et votre constance. Aucun délai garanti. La régularité est le facteur clé — c'est pourquoi nos checklists et trackers sont conçus pour vous aider à rester régulière jour après jour.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Où puis-je acheter l'App ?</button>
-        <div class="faq-a">L'App Gélatine Bariatrique est exclusivement vendue via cette page. Elle n'est pas disponible en pharmacie, sur Amazon ou ailleurs. Toutes les transactions sont sécurisées via Digistore24.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Faut-il faire un régime ou du sport ?</button>
-        <div class="faq-a">Non. L'approche est faite pour s'intégrer à votre vie réelle, sans privation extrême ni rigidité. Les recettes proposées sont savoureuses et compatibles avec vos repas en famille.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Cela fonctionne-t-il après 50 ans ?</button>
-        <div class="faq-a">Oui. Le programme a été conçu spécialement pour les femmes 35+, en tenant compte des changements hormonaux et métaboliques.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Quel pack me recommandez-vous ?</button>
-        <div class="faq-a">La majorité de nos utilisatrices choisissent le pack 6 mois Premium pour le meilleur rapport qualité-prix et tous les bonus inclus. Le pack 3 mois est idéal pour celles qui veulent essayer l'approche complète.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Comment fonctionne la garantie 60 jours ?</button>
-        <div class="faq-a">Vous avez 60 jours pour tester l'app. Si elle ne vous convient pas, contactez le support via votre reçu Digistore24 et vous serez remboursée intégralement. Sans questions.</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Quand vais-je recevoir mes accès ?</button>
-        <div class="faq-a">Immédiatement après le paiement. Vous recevez un email avec vos identifiants et tous les liens d'accès aux ressources (recettes, plans, checklists).</div>
-      </div>
-      <div class="accordion-header">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('is-open')">Comment utiliser l'App au quotidien ?</button>
-        <div class="faq-a">Tout est expliqué pas à pas dès la première connexion. La routine prend 5 à 15 minutes par jour selon vos préférences. Aucune compétence technique requise.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Authority ===== -->
-  <section class="authority">
-    <div class="authority-inner">
-      <h2>Qui est <span class="accent">Dr. Marie Lefèvre</span> ?</h2>
-      <div class="authority-photo">👩‍⚕️</div>
-      <div class="authority-name">Dr. Marie Lefèvre</div>
-      <div class="authority-cred">Nutritionniste · Paris</div>
-      <p class="authority-bio">"Après plus de 15 ans à accompagner des patientes en quête d'une approche durable, j'ai conçu cette méthode autour d'une idée simple : <strong>petites actions, répétées</strong>. La gélatine devient un point d'ancrage quotidien. Et les recettes adaptées rendent la constance possible — sans renoncer au plaisir."</p>
-    </div>
-  </section>
-
-  <!-- ===== Urgent CTA Final ===== -->
-  <div class="urgent-cta">
-    <h2>⏰ Stock limité ! Réservez maintenant</h2>
-    <p>Sécurisez votre accès à l'App Gélatine Bariatrique à -50% aujourd'hui — avant que les <strong id="stock-2">218</strong> derniers accès ne soient épuisés</p>
-  </div>
-  <div class="products pb-4">
-    <div class="pack-grid">
-      <div class="item featured">
-        <div class="item-header">★ Meilleure offre</div>
-        <div class="item-body">
-          <div class="pack-img">📱👑</div>
-          <div class="pack-period">6 mois Premium</div>
-          <div class="pack-price">€147<small>,00</small></div>
-          <a href="#" class="pack-cta">Réserver maintenant</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-header">Populaire</div>
-        <div class="item-body">
-          <div class="pack-img">📱✨</div>
-          <div class="pack-period">3 mois</div>
-          <div class="pack-price">€97<small>,00</small></div>
-          <a href="#" class="pack-cta">Réserver maintenant</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-header">Découverte</div>
-        <div class="item-body">
-          <div class="pack-img">📱</div>
-          <div class="pack-period">1 mois</div>
-          <div class="pack-price">€37<small>,00</small></div>
-          <a href="#" class="pack-cta">Réserver maintenant</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== Comments ===== -->
+  <!-- ===== Comments (clone fiel nutaflow) ===== -->
   <section class="comments-container">
-    <h2 class="comments-count">36 158 commentaires</h2>
+    <div class="comments-count">36 158 commentaires</div>
 
     <div class="comment">
-      <div class="comment-avatar">JL</div>
+      <div class="comment-avatar av1">CB</div>
       <div class="comment-data">
-        <div class="comment-name">Juliette L.</div>
-        <div class="comment-text">Je viens de m'inscrire après avoir hésité 2 semaines. La pizza allégée est dingue, je n'ai jamais autant kiffé un dîner light !</div>
-        <div class="comment-meta"><span>il y a 2h</span><span>👍 142</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Charlotte Bernard</div>
+        <div class="comment-text">Je pensais sincèrement que c'était encore une de ces longues vidéos ennuyeuses. Bravo Dr. Lefèvre pour partager quelque chose qui MARCHE vraiment !</div>
+        <div class="comment-meta"><span>il y a 2h</span><span class="comment-likes">👍 41</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">AB</div>
+      <div class="comment-avatar av2">ED</div>
       <div class="comment-data">
-        <div class="comment-name">Amélie B.</div>
-        <div class="comment-text">Mes amies se demandent ce que j'ai changé. Je leur dis : "rien d'extrême, juste une routine que je tiens vraiment".</div>
-        <div class="comment-meta"><span>il y a 1h</span><span>👍 89</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Émilie Dubois</div>
+        <div class="comment-text">Dr. Lefèvre est géniale 👏</div>
+        <div class="comment-meta"><span>il y a 1h 50min</span><span class="comment-likes">👍 52</span><span>💬 Répondre</span></div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-avatar av3">MC</div>
+      <div class="comment-data">
+        <div class="comment-name">Manon Chevalier</div>
+        <div class="comment-text">C'est miraculeux, sérieux. J'ai testé la recette à la gélatine et j'ai déjà perdu des centimètres de tour de taille.</div>
+        <div class="comment-meta"><span>il y a 1h 30min</span><span class="comment-likes">👍 68</span><span>💬 Répondre</span></div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-avatar av4">ZH</div>
+      <div class="comment-data">
+        <div class="comment-name">Zoé Henry</div>
+        <div class="comment-text">Exactement !! Je bouge plus, je dors mieux et je me sens plus légère, vous voyez ?</div>
+        <div class="comment-meta"><span>il y a 1h 20min</span><span class="comment-likes">👍 57</span><span>💬 Répondre</span></div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-avatar av5">LT</div>
+      <div class="comment-data">
+        <div class="comment-name">Léa Thibault</div>
+        <div class="comment-text">Pareil ! Mes pantalons ne me serrent plus, je me sens 30 ans plus jeune 😂</div>
+        <div class="comment-meta"><span>il y a 1h 10min</span><span class="comment-likes">👍 33</span><span>💬 Répondre</span></div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-avatar av6">DC</div>
+      <div class="comment-data">
+        <div class="comment-name">David Caron</div>
+        <div class="comment-text">Je sais pas les filles, c'est sérieux ou juste du marketing ??</div>
+        <div class="comment-meta"><span>il y a 55min</span><span class="comment-likes">👍 25</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment answer">
-      <div class="comment-avatar" style="background:#888">A</div>
+      <div class="comment-avatar av1">EL</div>
       <div class="comment-data">
-        <div class="comment-name">App Gélatine Bariatrique <span style="color:var(--button-color);font-size:11px">✓ Officiel</span></div>
-        <div class="comment-text">Bravo Amélie 👏 Continue comme ça, la régularité fait toute la différence !</div>
-        <div class="comment-meta"><span>il y a 50 min</span><span>👍 22</span></div>
+        <div class="comment-name">Émilie Laurent</div>
+        <div class="comment-text">David, j'étais super sceptique aussi, mais c'est réel. Essaie quelques jours et tu verras. J'ai été choquée de voir à quelle vitesse ça a aplati mon ventre et m'a donné plus d'énergie…</div>
+        <div class="comment-meta"><span>il y a 50min</span><span class="comment-likes">👍 44</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">CM</div>
+      <div class="comment-avatar av7">JM</div>
       <div class="comment-data">
-        <div class="comment-name">Camille M.</div>
-        <div class="comment-text">Le plan de maintien fait toute la différence pour moi. J'avais peur de reprendre comme avant — la garantie m'a rassurée.</div>
-        <div class="comment-meta"><span>il y a 50 min</span><span>👍 67</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Julien Marchand</div>
+        <div class="comment-text">Pareil, j'ai hésité mais les fringales et la graisse rebelle devenaient insupportables. Pour info, je n'arrivais même plus à me baisser pour lacer mes chaussures sans m'essouffler — c'est cette vidéo de Dr. Lefèvre qui m'a enfin soulagé.</div>
+        <div class="comment-meta"><span>il y a 45min</span><span class="comment-likes">👍 39</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">EF</div>
+      <div class="comment-avatar av2">MS</div>
       <div class="comment-data">
-        <div class="comment-name">Élodie F.</div>
-        <div class="comment-text">Le quiz au début est top — j'ai vraiment senti que le plan était fait pour moi.</div>
-        <div class="comment-meta"><span>il y a 38 min</span><span>👍 51</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Margaux Simon</div>
+        <div class="comment-text">Bravo Dr. Lefèvre ! Avec autant d'arnaques en ligne, c'est rare de voir quelque chose de vraiment utile. Vous méritez tout le succès et plus encore 👏👏</div>
+        <div class="comment-meta"><span>il y a 40min</span><span class="comment-likes">👍 72</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">MN</div>
+      <div class="comment-avatar av3">OM</div>
       <div class="comment-data">
-        <div class="comment-name">Margaux N.</div>
-        <div class="comment-text">Ça marche aussi pour celles qui n'ont jamais fait de régime ? J'ai commandé hier 🤞</div>
-        <div class="comment-meta"><span>il y a 22 min</span><span>👍 34</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Olivia Moreau</div>
+        <div class="comment-text">Dr. Lefèvre, je vous suis depuis des années mais ce secret de la recette à la gélatine est de loin votre meilleur conseil. Je l'applique tous les jours depuis 3 mois et je me sens plus forte que mes enfants 😂😂</div>
+        <div class="comment-meta"><span>il y a 35min</span><span class="comment-likes">👍 44</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">VS</div>
+      <div class="comment-avatar av4">JH</div>
       <div class="comment-data">
-        <div class="comment-name">Valérie S.</div>
-        <div class="comment-text">Pour celles qui hésitent, foncez ! L'approche est vraiment différente des régimes classiques.</div>
-        <div class="comment-meta"><span>il y a 18 min</span><span>👍 28</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Juliette Hubert</div>
+        <div class="comment-text">Tellement contente d'avoir regardé la vidéo jusqu'au bout ! Je pensais que c'était encore une arnaque internet, mais wow c'est légit. Je commence cette recette à la gélatine demain 😙</div>
+        <div class="comment-meta"><span>il y a 30min</span><span class="comment-likes">👍 12</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">PD</div>
+      <div class="comment-avatar av5">SR</div>
       <div class="comment-data">
-        <div class="comment-name">Patricia D.</div>
-        <div class="comment-text">Les checklists me sauvent. Je suis du genre à oublier, là j'ai un cadre simple à suivre.</div>
-        <div class="comment-meta"><span>il y a 12 min</span><span>👍 21</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Sophie Renard</div>
+        <div class="comment-text">C'est quoi exactement cette recette à la gélatine ?</div>
+        <div class="comment-meta"><span>il y a 25min</span><span class="comment-likes">👍 5</span><span>💬 Répondre</span></div>
+      </div>
+    </div>
+
+    <div class="comment answer">
+      <div class="comment-avatar av6">IC</div>
+      <div class="comment-data">
+        <div class="comment-name">Isabelle Caron</div>
+        <div class="comment-text">Elle l'explique vers le début. C'est ce qui a éliminé la graisse rebelle et les fringales constantes causées par ce blocage hormonal silencieux 😍</div>
+        <div class="comment-meta"><span>il y a 20min</span><span class="comment-likes">👍 20</span></div>
+      </div>
+    </div>
+
+    <div class="comment answer">
+      <div class="comment-avatar av7">LM</div>
+      <div class="comment-data">
+        <div class="comment-name">Lucas Martin</div>
+        <div class="comment-text">Ça m'est arrivé aussi !!</div>
+        <div class="comment-meta"><span>il y a 18min</span><span class="comment-likes">👍 8</span></div>
+      </div>
+    </div>
+
+    <div class="comment answer">
+      <div class="comment-avatar av5">SR</div>
+      <div class="comment-data">
+        <div class="comment-name">Sophie Renard</div>
+        <div class="comment-text">Génial, merci pour l'info. Je vais clairement essayer !</div>
+        <div class="comment-meta"><span>il y a 15min</span><span class="comment-likes">👍 15</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <div class="comment-avatar">SC</div>
+      <div class="comment-avatar av1">EA</div>
       <div class="comment-data">
-        <div class="comment-name">Sandrine C.</div>
-        <div class="comment-text">À 56 ans je doutais que ça marche pour moi. Surprise positive ! Je tiens depuis 3 semaines maintenant.</div>
-        <div class="comment-meta"><span>il y a 8 min</span><span>👍 19</span><span>💬 Répondre</span></div>
+        <div class="comment-name">Élise Aubry</div>
+        <div class="comment-text">Dr. Lefèvre, vous êtes MERVEILLEUSE ! Cela a fait fondre la graisse du ventre de mon père !! J'ai partagé votre vidéo à toute ma famille et mes amis.</div>
+        <div class="comment-meta"><span>il y a 10min</span><span class="comment-likes">👍 72</span><span>💬 Répondre</span></div>
       </div>
     </div>
 
-    <div class="comments-closed">Cette publication ne reçoit plus de commentaires.</div>
+    <div class="comments-closed">Cette publication ne reçoit plus de commentaires !</div>
   </section>
 
-  <!-- ===== Disclaimer ===== -->
-  <div class="disclaimer">
-    <p>This site is not affiliated with, endorsed by, or sponsored by Facebook or Google. Facebook and Google are registered trademarks of their respective owners. All testimonials are from real people, but results may vary.</p>
-    <p>Les résultats varient d'une personne à l'autre. Aucun délai ou résultat précis n'est garanti. Ce programme n'est pas un traitement médical.</p>
+  <!-- ===== Floating "vient d'acheter" notification ===== -->
+  <div class="pop-buy is-hidden" id="pop-buy">
+    <div class="pop-buy-avatar" id="pop-avatar">M</div>
+    <div class="pop-buy-text">
+      <strong id="pop-name">Marie de Lyon</strong> <span id="pop-action">vient d'acheter</span> ! ✓
+    </div>
+    <button class="pop-buy-close" onclick="document.getElementById('pop-buy').classList.add('is-hidden')">✕</button>
   </div>
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <h3>App Gélatine Bariatrique</h3>
     <div class="links">
-      <a href="/privacy-policy/">Politique de confidentialité</a>
-      <a href="/terms-of-use/">Conditions d'utilisation</a>
+      <a href="/terms-of-use/">Conditions</a>
+      <a href="/privacy-policy/">Confidentialité</a>
       <a href="/refund-policy/">Politique de remboursement</a>
       <a href="/contact/">Contact</a>
       <a href="/imprint/">Mentions légales</a>
     </div>
-    <div class="copy">&copy; 2026 App Gelatina Bariátrica. Tous droits réservés.</div>
+    <div class="copy">&copy; 2026 App Gélatine Bariatrique Research. Tous droits réservés.</div>
   </footer>
 
-  <!-- Quiz logic -->
+  <!-- Pop-up "vient d'acheter" rotativo -->
   <script>
   (function(){
-    var TOTAL_STEPS = 7;
-    var current = 1;
-    var steps = document.querySelectorAll('.step');
-    var loadingEl = document.getElementById('loading');
-    var resultEl  = document.getElementById('result');
-    var progress  = document.getElementById('progress');
-    var stockEl   = document.getElementById('stock');
-    var stockEl2  = document.getElementById('stock-2');
-
     document.getElementById('today').textContent = new Date().toLocaleDateString('fr-FR');
 
-    function setProgress(){ progress.style.width = (current/TOTAL_STEPS*100) + '%'; }
+    var buyers = [
+      {n:'Marie de Lyon',i:'M'},
+      {n:'Sophie de Marseille',i:'S'},
+      {n:'Claire de Toulouse',i:'C'},
+      {n:'Amélie de Bordeaux',i:'A'},
+      {n:'Élodie de Nantes',i:'É'},
+      {n:'Juliette de Paris',i:'J'},
+      {n:'Camille de Lille',i:'C'},
+      {n:'Patricia de Strasbourg',i:'P'}
+    ];
+    var pop = document.getElementById('pop-buy');
+    var nameEl = document.getElementById('pop-name');
+    var avEl = document.getElementById('pop-avatar');
+    var idx = 0;
 
-    window.next = function(answer){
-      steps[current-1].classList.remove('is-active');
-      current++;
-      setProgress();
-      if (current <= TOTAL_STEPS) steps[current-1].classList.add('is-active');
-      window.scrollTo({top:document.querySelector('.quiz-section').offsetTop-20, behavior:'smooth'});
-      if(window.fbq){ fbq('trackCustom','QuizStep',{step:current-1, answer:answer}); }
-    };
+    function showNext(){
+      var b = buyers[idx % buyers.length];
+      nameEl.textContent = b.n;
+      avEl.textContent = b.i;
+      pop.classList.remove('is-hidden');
+      setTimeout(function(){ pop.classList.add('is-hidden'); }, 5000);
+      idx++;
+    }
 
-    window.finish = function(answer){
-      steps[current-1].classList.remove('is-active');
-      progress.style.width = '100%';
-      loadingEl.classList.add('is-active');
-      if(window.fbq){ fbq('trackCustom','QuizComplete',{lastAnswer:answer}); }
-
-      var sec = 9;
-      var counter = document.getElementById('countdown');
-      var i = setInterval(function(){
-        sec--;
-        if(sec >= 0) counter.textContent = sec;
-        if(sec <= 0){
-          clearInterval(i);
-          loadingEl.classList.remove('is-active');
-          resultEl.classList.add('is-active');
-          var stockN = Math.floor(Math.random()*20)+200;
-          stockEl.textContent = stockN;
-          if(stockEl2) stockEl2.textContent = stockN;
-          window.scrollTo({top:resultEl.offsetTop-20, behavior:'smooth'});
-          if(window.fbq){ fbq('trackCustom','QuizResultViewed'); }
-        }
-      },1000);
-    };
-
-    setProgress();
+    setTimeout(showNext, 8000);
+    setInterval(showNext, 22000);
   })();
   </script>
 
