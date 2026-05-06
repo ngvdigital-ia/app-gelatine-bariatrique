@@ -19,7 +19,29 @@
 		<!-- <link rel="icon" href=""> -->
 
 		<!-- CSS local bundle (bootstrap purged + page + vsl + custom + fbcomments + bi icons) -->
-		<link rel="stylesheet" href="assets/css/bundle.css">
+		<link rel="preload" href="assets/css/bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="assets/css/bundle.css"></noscript>
+		<style>
+			/* Critical CSS above-the-fold */
+			*{box-sizing:border-box}
+			body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:1rem;line-height:1.5;color:#212529;background:#fff}
+			h1,h2,h3,h4{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}
+			p{margin-top:0;margin-bottom:1rem}
+			img,svg{vertical-align:middle;max-width:100%}
+			main#container{width:100%;height:auto;margin:0 auto}
+			.red-header{background-color:#a70c0c;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;height:auto}
+			header h1{font-weight:400;color:#fff;margin:0;flex-grow:1;text-align:center;font-size:2rem}
+			header img{width:23px}
+			marquee{background-color:#810505;color:white;letter-spacing:2px;text-transform:uppercase;padding:4px 0;font-weight:400;font-size:11px}
+			.principal{max-width:900px;margin:0 auto;padding:5px 12px 15px;text-align:center}
+			.txt_info_noticia{text-align:left;color:#54595F;font-size:12px;padding-top:10px}
+			.video_vturb{padding-top:15px;margin:0 auto;max-width:1000px}
+			.video-title{font-size:1.5rem}
+			.container{width:100%;padding-right:.75rem;padding-left:.75rem;margin-right:auto;margin-left:auto}
+			.container-principal h1{font-size:30px;text-align:left}
+			.esconder{display:none}
+			vturb-smartplayer{display:block;margin:0 auto;width:100%;max-width:400px;aspect-ratio:16/9}
+		</style>
 
 		<!-- Preload Vturb -->
 		<script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
@@ -41,11 +63,6 @@
 
 
 
-		<style>
-			.esconder {
-				display: none;
-			}
-		</style>
 	</head>
 
 	<body style="--autoplay-pulse-speed: 1.3333333333333333s;" cz-shortcut-listen="true">
