@@ -1918,15 +1918,14 @@
 
 			</section>
 
-			<!-- jQuery + Bootstrap -->
-			<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-			<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+			<!-- Bootstrap (defer: não bloqueia LCP) -->
+			<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js" defer></script>
 
 			<!-- Purchase Notifications VBL JS -->
-			<script type="text/javascript" src="assets/js/purchase-notifications-vbl.js"></script>
+			<script type="text/javascript" src="assets/js/purchase-notifications-vbl.js" defer></script>
 
 			<!-- Qty Remaining -->
-			<script type="text/javascript" src="assets/js/quiz-vbl.js"></script>
+			<script type="text/javascript" src="assets/js/quiz-vbl.js" defer></script>
 
 			<!-- Display Today Date -->
 			<script>
@@ -1962,7 +1961,7 @@
 
 
 			<script>
-				$(document).ready(function () {
+				document.addEventListener("DOMContentLoaded", function () {
 					var delaySeconds = 2398;
 					var player = document.querySelector("vturb-smartplayer");
 
@@ -1972,36 +1971,27 @@
 						var initialized = false;
 
 						var checkInterval = setInterval(function () {
-							var $target = $(".esconder:visible").first();
+							var target = document.querySelector('.esconder');
+							var isVisible = target && window.getComputedStyle(target).display !== 'none';
 
-							if ($target.length && !initialized) {
+							if (isVisible && !initialized) {
 								initialized = true;
 								clearInterval(checkInterval);
 
 								// Scroll suave
-								var $scrollTarget = $("#quiz");
-								if ($scrollTarget.length) {
-									$('html, body').animate({
-										scrollTop: $scrollTarget.offset().top
-									}, 800);
+								var scrollTarget = document.getElementById("quiz");
+								if (scrollTarget) {
+									scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
 								}
 
-								// var $scrollTarget = $("#scrolldown");
-								// if ($scrollTarget.length) {
-								// 	$('html, body').animate({
-								// 		scrollTop: $scrollTarget.offset().top
-								// 	}, 800);
-								// }
-
 								// Manipular todos os .countdown dentro do .esconder visível
-								$target.find(".countdown").each(function () {
-									var $countdownEl = $(this);
-									var desiredValue = parseInt($countdownEl.text().trim().match(/\d+/)[0], 10);
+								target.querySelectorAll(".countdown").forEach(function (countdownEl) {
+									var desiredValue = parseInt(countdownEl.textContent.trim().match(/\d+/)[0], 10);
 
 									var decrementTimer = setInterval(function () {
 										if (desiredValue > 48) {
 											desiredValue = Math.max(desiredValue - 6, 48);
-											$countdownEl.text(desiredValue);
+											countdownEl.textContent = desiredValue;
 										} else {
 											clearInterval(decrementTimer);
 										}
@@ -2017,7 +2007,7 @@
 
 
 
-			<script src="assets/js/utm-transfer.js"></script>
+			<script src="assets/js/utm-transfer.js" defer></script>
 
 
 	

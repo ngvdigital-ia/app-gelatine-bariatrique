@@ -265,9 +265,10 @@ unlockButton.addEventListener('click', function () {
   });
 
   // Faz o scroll suave até o elemento com id "firstPackage"
-  $('html, body').animate({
-    scrollTop: $('#scrolldown').offset().top
-  }, 1000);
+  var scrollTarget = document.getElementById('scrolldown');
+  if (scrollTarget) {
+    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 });
 
 
